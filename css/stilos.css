@@ -1,0 +1,94 @@
+* {
+  margin: 0;
+  padding: 0;
+}
+
+html {
+  font-size: 62.5;
+}
+
+body {
+  background-color: rgb(255, 255, 255);
+  color: #141414;
+  font-family: "Montserrat", sans-serif;
+}
+body header {
+  margin-bottom: 20px;
+}
+body header nav {
+  background-color: #357DED;
+  padding: 10px;
+}
+body header nav h1 {
+  font-size: 25px;
+  margin: 0;
+}
+body .mainSimulador {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  grid-template-rows: 0.7fr 0.7fr;
+  grid-template-areas: "listaDeRequisitos img" "sectionContactos articleSimulador";
+  gap: 20px;
+}
+body .mainSimulador .listaDeRequisitos {
+  grid-area: listaDeRequisitos;
+}
+body .mainSimulador .listaDeRequisitos h2 {
+  margin: 10px;
+  text-align: start;
+}
+body .mainSimulador .listaDeRequisitos ul {
+  margin: 30px;
+}
+body .mainSimulador img {
+  grid-area: img;
+  margin: 20px 0px 0px 20px;
+}
+body .mainSimulador .sectionContactos {
+  grid-area: sectionContactos;
+}
+body .mainSimulador .sectionContactos .divSection h2 {
+  margin: 20px;
+}
+body .mainSimulador .sectionContactos .divSection #cuadroDePrestamo {
+  display: grid;
+  grid-gap: 15px;
+  justify-content: center;
+  align-content: space-evenly;
+  margin: 0px 0px 0px 20px;
+}
+body .mainSimulador .sectionContactos .divSection #cuadroDePrestamo input {
+  padding: 5px;
+  padding-right: 20px;
+}
+body .mainSimulador .sectionContactos .divSection #cuadroDePrestamo #botonSimular {
+  padding: 12px;
+  font-size: 15px;
+  border-radius: 30px;
+  width: 100px;
+  margin-left: 60px;
+}
+body .mainSimulador #articleSimulador {
+  grid-area: articleSimulador;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+body .mainSimulador #articleSimulador h2 {
+  margin: 20px;
+}
+body .mainSimulador #articleSimulador #divDatosPrestamo {
+  display: grid;
+  grid-gap: 20px;
+  padding: 5px;
+}
+body .mainSimulador #articleSimulador #divDatosPrestamo #botonSolicitarPrestamo {
+  padding: 12px;
+  font-size: 15px;
+  border-radius: 30px;
+  width: 150px;
+  margin-left: 60px;
+}
+
+/*# sourceMappingURL=stilos.css.map */

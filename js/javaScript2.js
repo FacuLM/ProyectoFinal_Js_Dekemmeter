@@ -1,0 +1,96 @@
+let obternerNombreDelInput=document.getElementById("nombre")
+let obternerApellidoDelInput=document.getElementById("apellido")
+let obternerEmailDelInput=document.getElementById("email")
+let inputSimulador=document.getElementById("monto")
+let cuotasDelInput=document.getElementById("cuotas")
+let datosPersonales=[]
+    class Datos{
+        constructor(nombre, apellido, email,monto,cuotas,valorDeCuotas,montoTotalFinal){
+            this.nombre=nombre,
+            this.apellido=apellido,
+            this.email=email,
+            this.monto=monto,
+            this.cuotas=cuotas,
+            this.valorDeCuotas=valorDeCuotas
+            this.monntoTotalFinal=montoTotalFinal
+    }   
+}
+function simulador(){
+    document.getElementById("botonSimular").addEventListener("click", ()=>{
+        let monto=parseFloat(inputSimulador.value)
+        let cuotas=parseInt(cuotasDelInput.value)
+        if (isNaN(monto)|| monto<=0 || isNaN(cuotas)||cuotas<=0){
+            Swal.fire({
+                title: "Favor de revisar",
+                icon: "error"
+                });
+            return;
+        }
+        else{
+            // limpiar Cuadro de Prestamo
+            document.getElementById("botonSimular").remove()
+            obternerNombreDelInput.remove()
+            obternerApellidoDelInput.remove()
+            obternerEmailDelInput.remove()
+            inputSimulador.remove()
+            cuotasDelInput.remove()
+
+            // boton eliminar
+            let botonLimpiar = document.createElement("button");
+            botonLimpiar.textContent = "Nuevo Prestamo";
+            botonLimpiar.style.padding="15px"
+            cuadroDePrestamo.appendChild(botonLimpiar)
+            botonLimpiar.onclick =()=>{location.reload()
+            };
+
+            // calculo del prestamo
+            let interesAnual= 0.75
+            let interesMensual=interesAnual/12;
+            let montoTotalConInteres=monto*(1+interesMensual*cuotas);
+            let cuotasMensuales=montoTotalConInteres/cuotas
+
+            // cuadro con datos del prestamo 
+            document.getElementById("articleSimulador").innerHTML +=`
+            <h2>DATOS DEL PRESTAMO</h2>
+            <div id="divDatosPrestamo">
+                <p>
+                Cliente: ${obternerNombreDelInput.value+ " " + obternerApellidoDelInput.value }
+                </p>
+                <p>
+                Email: ${obternerEmailDelInput.value}
+                </p>
+                <p>
+                Monto Inicial: $${monto}
+                </p>
+                <p>
+                Total de Cuotas: ${cuotas}
+                </p>
+                <p>
+                Cuotas Mensuales: $${parseFloat(cuotasMensuales).toFixed(2)}
+                </p>
+                <p>
+                Monto final con interes: $${montoTotalConInteres.toFixed(2)}
+                </p>
+                <button id="botonSolicitarPrestamo">
+                Solicitar Prestamo
+                </button>
+            </div>
+            `
+            document.getElementsById("botonSolicitarPrestamo").addEventListener("click",()=>{
+                Swal.fire({
+                title: "Prestamo Solicitado",
+                text: "A la brevedad nuestro equipo se contactara con usted",
+                icon: "success"
+                });
+                return;
+            })
+            // Array de datos y guardado en LocalStorage
+            let datos= new Datos (obternerNombreDelInput.value,obternerApellidoDelInput.value,obternerEmailDelInput.value,monto,cuotas,cuotasMensuales.toFixed(2),montoTotalConInteres)
+            datosPersonales.push(datos)
+            localStorage.setItem("Datos",JSON.stringify(datosPersonales))
+            console.table(datosPersonales)
+            }
+        }
+    )
+}
+simulador()

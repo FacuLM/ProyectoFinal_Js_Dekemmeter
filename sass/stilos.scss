@@ -1,0 +1,100 @@
+*
+{
+    margin: 0;
+    padding: 0;
+}
+html
+{
+    font-size: 62.5;
+}
+// Simulador
+body{
+    background-color: rgb(255, 255, 255);
+    color: #141414;
+    font-family: "Montserrat", sans-serif;
+    header{
+        margin-bottom: 20px;
+        nav{
+            background-color:   #357DED;
+            padding: 10px;
+            h1{
+                font-size: 25px;
+                margin: 0;
+            }
+        }   
+    }
+    .mainSimulador{
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        grid-template-rows: 0.7fr 0.7fr;
+        grid-template-areas: 
+        "listaDeRequisitos img"
+        "sectionContactos articleSimulador"
+        ;
+        gap: 20px;
+        .listaDeRequisitos{
+            grid-area: listaDeRequisitos ;
+            h2{
+                margin: 10px;
+                text-align: start;
+            }
+            ul{
+                margin: 30px;
+            }
+            
+        }
+        img{
+            grid-area: img ;
+            margin: 20px 0px 0px 20px;
+        }
+        .sectionContactos{
+            grid-area: sectionContactos;
+            .divSection{
+                    h2{
+                        margin: 20px;
+                        
+                    }
+                    #cuadroDePrestamo{
+                        display: grid;
+                        grid-gap: 15px;
+                        justify-content: center;
+                        align-content: space-evenly;
+                        margin: 0px 0px 0px 20px;
+                            input{
+                                padding: 5px;
+                                padding-right: 20px;
+                            }
+                            #botonSimular{
+                                padding: 12px;
+                                font-size: 15px;
+                                border-radius: 30px;
+                                width: 100px;
+                                margin-left: 60px;
+                            }
+                }
+            }
+        }
+        #articleSimulador{
+            grid-area:articleSimulador ;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            h2{
+                margin: 20px;
+            }
+            #divDatosPrestamo{
+                display: grid;
+                grid-gap: 20px;
+                padding: 5px;
+                #botonSolicitarPrestamo{
+                    padding: 12px;
+                    font-size: 15px;
+                    border-radius: 30px;
+                    width: 150px;
+                    margin-left: 60px;
+                }
+            }
+        }
+    }
+}

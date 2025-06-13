@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!-- boots -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.6/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-4Q6Gf2aSP4eDXB8Miphtr37CMZZQ5oXLH2yaXMJ2w8e2ZtHTl7GptT4jmndRuHDT" crossorigin="anonymous">
+    <!-- fuente -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap" rel="stylesheet">    
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Nunito:ital,wght@0,200..1000;1,200..1000&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="css/stilos.css">
+    <title>Simulador</title>
+</head>
+<body>
+    <header>
+        <nav>
+            <h1>Banco de Creditos Kline</h1>
+        </nav>
+    </header>
+    <main class="mainSimulador">
+        <div class="listaDeRequisitos">
+            <h2 class="tituloMain">
+                Préstamos Personales
+            </h2>
+            <ul>
+                <li>
+                    <p>Contratación presencial, o vía web.</p>
+                </li>
+                <li>
+                    <p>
+                        Costo Financiero Total anual: 75%.
+                    </p>
+                </li>
+                <li>
+                    <p>
+                        Edad máxima: al momento del otorgamiento el afiliado debe optar por un plan que permita la cancelación del crédito antes de cumplir los 78 años de edad.
+                    </p>
+                </li>
+                <li>
+                    <p>
+                        El prestatario puede efectuar cancelaciones anticipadas parciales o total del saldo adeudado, en cualquier momento, sin límite. Las mismas abonarán cargas administrativas por un valor del 4% del monto cancelado. En la cancelación anticipada parcial,
+                        el prestatario podrá mantener el importe de cuota acortando el plazo de amortización, o mantener el plazo de amortización y disminuir el importe de cuota mensual.
+                        Las cancelaciones totales que se efectúen a través de refinanciación por el otorgamiento de un nuevo préstamo personal, serán admitidas cuando se hubiese abonado por lo menos el 50% del número de cuotas pactadas en el préstamo anterior.
+                    </p>
+                </li>
+                <li>
+                    <p>
+                        Seguro de vida incluido.
+                    </p>
+                </li>
+                <li>
+                    <p>
+                    El solicitante de préstamo personal deberá tener una caja de ahorro o cuenta corriente activa en pesos a su nombre, de cualquier entidad bancaria.
+                    Al momento de contratar deberá presentar el extracto bancario o comprobante de la misma que contenga los siguientes datos:
+                    </p>
+                    <ul>
+                        <li>
+                            <p>
+                                Nombre del solicitante (titular de la cuenta)
+                            </p>
+                        </li>
+                        <li>
+                            <p>
+                                Número de caja de ahorro o cuenta corriente (en pesos)
+                            </p>
+                        </li>
+                        <li>
+                            <p>
+                                Número de CBU
+                            </p>
+                        </li>
+                        <li>
+                            <p>
+                            Número de sucursal bancaria.
+                            </p>
+                        </li>
+                        <p>
+                            También deberá presentar la constancia de CUIL.
+                            <br>
+                            Importante: Verifique en la sucursal bancaria que la cuenta se encuentre vigente.
+                        </p>
+                    </ul>
+                </li>
+            </ul>
+        </div>
+        <img src="https://i.pinimg.com/474x/bc/5f/69/bc5f69036278e5a52d5bcbefc64d499b.jpg" alt="">
+        <section class="sectionContactos"> 
+            <div class="divSection">
+                <h2 class="tituloSimulador text-center">
+                    SIMULADOR DE PRESTAMOS
+                </h2>
+                <div id="cuadroDePrestamo">
+                    <input type="text" id="nombre" placeholder="Ingrese su nombre" >
+                    <input type="text" id="apellido" placeholder="Ingrese su apellido">
+                    <input type="email" id="email" placeholder="Ingrese su email">
+                    <input type="text" id="monto" placeholder="Ingrese el monto">
+                    <input type="text" id="cuotas" placeholder="Ingrese las cuotas">
+                    <button id="botonSimular">Simular</button>
+                </div>
+            </div>
+        </section>
+        <article id="articleSimulador">
+
+        </article>
+    </main>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.6/dist/js/bootstrap.bundle.min.js" integrity="sha384-j1CDi7MgGQ12Z7Qab0qlWQ/Qqz24Gc6BM0thvEMVjHnfYGF0rmFCozFSxQBxwHKO" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+    <script src="https://cdn.jsdelivr.net/npm/luxon@3.6.1/build/global/luxon.min.js"></script>
+    <script src="js/javaScript2.js"></script>
+</body>
+</html>
