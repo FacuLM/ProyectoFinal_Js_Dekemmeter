@@ -3,23 +3,26 @@ let obternerApellidoDelInput=document.getElementById("apellido")
 let obternerEmailDelInput=document.getElementById("email")
 let inputSimulador=document.getElementById("monto")
 let cuotasDelInput=document.getElementById("cuotas")
+const DateTime= luxon.DateTime;
+let fechaYhora=DateTime.now()
 let datosPersonales=[]
     class Datos{
-        constructor(nombre, apellido, email,monto,cuotas,valorDeCuotas,montoTotalFinal){
+        constructor(nombre,apellido,email,monto,cuotas,valorDeCuotas,montoTotalFinal,fechaYhora){
             this.nombre=nombre,
             this.apellido=apellido,
             this.email=email,
             this.monto=monto,
             this.cuotas=cuotas,
-            this.valorDeCuotas=valorDeCuotas
-            this.monntoTotalFinal=montoTotalFinal
+            this.valorDeCuotas=valorDeCuotas,
+            this.montoTotalFinal=montoTotalFinal,
+            this.fechaYhora=fechaYhora
     }   
 }
 function simulador(){
     document.getElementById("botonSimular").addEventListener("click", ()=>{
         let monto=parseFloat(inputSimulador.value)
         let cuotas=parseInt(cuotasDelInput.value)
-        if (isNaN(monto)|| monto<=0 || isNaN(cuotas)||cuotas<=0){
+        if (isNaN(monto) || monto<=0 || isNaN(cuotas) || cuotas<=0){
             Swal.fire({
                 title: "Favor de revisar",
                 icon: "error"
@@ -38,8 +41,13 @@ function simulador(){
             // boton eliminar
             let botonLimpiar = document.createElement("button");
             botonLimpiar.textContent = "Nuevo Prestamo";
-            botonLimpiar.style.padding="15px"
             cuadroDePrestamo.appendChild(botonLimpiar)
+            botonLimpiar.style=`
+            background-color:#FF1D15;
+            padding: 12px;
+            font-weight:500;
+            border-radius: 10px;
+            `
             botonLimpiar.onclick =()=>{location.reload()
             };
 
@@ -71,24 +79,41 @@ function simulador(){
                 <p>
                 Monto final con interes: $${montoTotalConInteres.toFixed(2)}
                 </p>
+                <p>
+                ${fechaYhora.toLocaleString(DateTime.DATETIME_MED)}
+                </p>
                 <button id="botonSolicitarPrestamo">
                 Solicitar Prestamo
                 </button>
             </div>
             `
-            document.getElementsById("botonSolicitarPrestamo").addEventListener("click",()=>{
+            document.getElementById("botonSolicitarPrestamo").addEventListener("click",()=>{
                 Swal.fire({
-                title: "Prestamo Solicitado",
-                text: "A la brevedad nuestro equipo se contactara con usted",
-                icon: "success"
+                title: "Solicitar Prestamo",
+                icon: "question",
+                showDenyButton: true,
+                confirmButtonText: "Aceptar",
+                denyButtonText:"Cancelar"
+                
+                }).then((respuesta) => {
+                if (respuesta.isConfirmed) {
+                    Swal.fire({
+                        icon:"success",
+                        title: "Prestamo Solicitado con Exito",
+                        text:"A la brevedad nuestro equipo estara en contacto"
                 });
-                return;
+                    // Array de datos y guardado en LocalStorage
+                    let datos= new Datos (obternerNombreDelInput.value,obternerApellidoDelInput.value,obternerEmailDelInput.value,monto,cuotas,cuotasMensuales.toFixed(2),montoTotalConInteres,fechaYhora.toLocaleString(DateTime.DATETIME_MED))
+                    datosPersonales.push(datos)
+                    localStorage.setItem("Datos",JSON.stringify(datosPersonales))
+                    console.table(datosPersonales)
+                    
+                } 
+                else if (respuesta.isDenied) {
+                    Swal.fire("Prestamo Cancelado", "", "error",)
+                }
+                });
             })
-            // Array de datos y guardado en LocalStorage
-            let datos= new Datos (obternerNombreDelInput.value,obternerApellidoDelInput.value,obternerEmailDelInput.value,monto,cuotas,cuotasMensuales.toFixed(2),montoTotalConInteres)
-            datosPersonales.push(datos)
-            localStorage.setItem("Datos",JSON.stringify(datosPersonales))
-            console.table(datosPersonales)
             }
         }
     )

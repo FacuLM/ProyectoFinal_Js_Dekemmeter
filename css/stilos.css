@@ -26,9 +26,9 @@ body header nav h1 {
 body .mainSimulador {
   display: grid;
   grid-template-columns: 1fr 1fr;
-  grid-template-rows: 0.7fr 0.7fr;
+  grid-template-rows: 0.4fr 0.7fr;
   grid-template-areas: "listaDeRequisitos img" "sectionContactos articleSimulador";
-  gap: 20px;
+  gap: 15px;
 }
 body .mainSimulador .listaDeRequisitos {
   grid-area: listaDeRequisitos;
@@ -60,13 +60,17 @@ body .mainSimulador .sectionContactos .divSection #cuadroDePrestamo {
 body .mainSimulador .sectionContactos .divSection #cuadroDePrestamo input {
   padding: 5px;
   padding-right: 20px;
+  border: 1px solid;
+  border-radius: 10px;
 }
 body .mainSimulador .sectionContactos .divSection #cuadroDePrestamo #botonSimular {
   padding: 12px;
   font-size: 15px;
-  border-radius: 30px;
-  width: 100px;
+  border-radius: 15px;
+  font-weight: 500;
+  width: 120px;
   margin-left: 60px;
+  background-color: #337CA0;
 }
 body .mainSimulador #articleSimulador {
   grid-area: articleSimulador;
@@ -80,15 +84,20 @@ body .mainSimulador #articleSimulador h2 {
 }
 body .mainSimulador #articleSimulador #divDatosPrestamo {
   display: grid;
-  grid-gap: 20px;
+  grid-gap: 10px;
   padding: 5px;
 }
 body .mainSimulador #articleSimulador #divDatosPrestamo #botonSolicitarPrestamo {
   padding: 12px;
   font-size: 15px;
-  border-radius: 30px;
-  width: 150px;
+  border-radius: 15px;
+  font-weight: 500;
+  width: 120px;
   margin-left: 60px;
+  background-color: #3EC300;
+}
+body footer {
+  border-top: 1px solid;
 }
 
 /*# sourceMappingURL=stilos.css.map */
