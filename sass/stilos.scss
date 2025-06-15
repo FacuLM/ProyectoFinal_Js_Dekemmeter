@@ -9,14 +9,17 @@ html
 }
 // Simulador
 body{
-    background-color: rgb(255, 255, 255);
-    color: #141414;
+    background-color: #2E2F2F;
+    color: #F7FFF7;
     font-family: "Montserrat", sans-serif;
     header{
         margin-bottom: 20px;
         nav{
             background-color:   #357DED;
             padding: 10px;
+            display: flex;
+            flex-direction: row;
+            justify-content: space-between;
             h1{
                 font-size: 25px;
                 margin: 0;
@@ -49,15 +52,16 @@ body{
         }
         .sectionContactos{
             grid-area: sectionContactos;
-            .divSection{
-                    h2{
-                        margin: 20px;
-                        
-                    }
+            .divSection{    
+                display: grid;
+                grid-template-columns: 1fr;
+                justify-items: center;
+                align-content: space-between;
                     #cuadroDePrestamo{
                         display: grid;
                         grid-gap: 15px;
-                        justify-content: center;
+                        justify-items: center;
+                        align-items: center;
                         align-content: space-evenly;
                         margin: 0px 0px 0px 20px;
                             input{
@@ -72,7 +76,6 @@ body{
                                 border-radius: 15px;
                                 font-weight:500;
                                 width: 120px;
-                                margin-left: 60px;
                                 background-color: #337CA0;
                             }
                 }
@@ -80,30 +83,29 @@ body{
         }
         #articleSimulador{
             grid-area:articleSimulador ;
-            display: flex;
-            flex-direction: column;
-            justify-content: center;
-            align-items: center;
-            h2{
-                margin: 20px;
-            }
             #divDatosPrestamo{
                 display: grid;
-                grid-gap: 10px;
+                grid-template-columns: 1fr;
+                gap: 25px;
+                margin: 0 100px 0 100px;
+                align-content: space-between;
                 padding: 5px;
+                p{
+                    margin: 0;
+                }
                 #botonSolicitarPrestamo{
                     padding: 12px;
                     font-size: 15px;
                     border-radius: 15px;
                     font-weight:500;
                     width: 120px;
-                    margin-left: 60px;
+                    margin: 0 0 0 150px;
                     background-color: #3EC300;
                 }
             }
         }
     }
     footer{
-        border-top: 1px solid;
+        border-top: 2px solid;
     }
 }

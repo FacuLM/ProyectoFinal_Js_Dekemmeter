@@ -30,6 +30,14 @@ function simulador(){
             return;
         }
         else{
+            Toastify({
+            text: "Prestamo Simulado",
+            className: "info",
+            duration:1800,
+            style: {
+            backgroundColor:"#337CA0"
+            }
+            }).showToast();
             // limpiar Cuadro de Prestamo
             document.getElementById("botonSimular").remove()
             obternerNombreDelInput.remove()
@@ -59,7 +67,7 @@ function simulador(){
 
             // cuadro con datos del prestamo 
             document.getElementById("articleSimulador").innerHTML +=`
-            <h2>DATOS DEL PRESTAMO</h2>
+            <h2 class="text-center">Datos del Prestamo</h2>
             <div id="divDatosPrestamo">
                 <p>
                 Cliente: ${obternerNombreDelInput.value+ " " + obternerApellidoDelInput.value }
@@ -106,8 +114,6 @@ function simulador(){
                     let datos= new Datos (obternerNombreDelInput.value,obternerApellidoDelInput.value,obternerEmailDelInput.value,monto,cuotas,cuotasMensuales.toFixed(2),montoTotalConInteres,fechaYhora.toLocaleString(DateTime.DATETIME_MED))
                     datosPersonales.push(datos)
                     localStorage.setItem("Datos",JSON.stringify(datosPersonales))
-                    console.table(datosPersonales)
-                    
                 } 
                 else if (respuesta.isDenied) {
                     Swal.fire("Prestamo Cancelado", "", "error",)

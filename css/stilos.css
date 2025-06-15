@@ -8,8 +8,8 @@ html {
 }
 
 body {
-  background-color: rgb(255, 255, 255);
-  color: #141414;
+  background-color: #2E2F2F;
+  color: #F7FFF7;
   font-family: "Montserrat", sans-serif;
 }
 body header {
@@ -18,6 +18,9 @@ body header {
 body header nav {
   background-color: #357DED;
   padding: 10px;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
 }
 body header nav h1 {
   font-size: 25px;
@@ -47,13 +50,17 @@ body .mainSimulador img {
 body .mainSimulador .sectionContactos {
   grid-area: sectionContactos;
 }
-body .mainSimulador .sectionContactos .divSection h2 {
-  margin: 20px;
+body .mainSimulador .sectionContactos .divSection {
+  display: grid;
+  grid-template-columns: 1fr;
+  justify-items: center;
+  align-content: space-between;
 }
 body .mainSimulador .sectionContactos .divSection #cuadroDePrestamo {
   display: grid;
   grid-gap: 15px;
-  justify-content: center;
+  justify-items: center;
+  align-items: center;
   align-content: space-evenly;
   margin: 0px 0px 0px 20px;
 }
@@ -69,23 +76,21 @@ body .mainSimulador .sectionContactos .divSection #cuadroDePrestamo #botonSimula
   border-radius: 15px;
   font-weight: 500;
   width: 120px;
-  margin-left: 60px;
   background-color: #337CA0;
 }
 body .mainSimulador #articleSimulador {
   grid-area: articleSimulador;
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items: center;
-}
-body .mainSimulador #articleSimulador h2 {
-  margin: 20px;
 }
 body .mainSimulador #articleSimulador #divDatosPrestamo {
   display: grid;
-  grid-gap: 10px;
+  grid-template-columns: 1fr;
+  gap: 25px;
+  margin: 0 100px 0 100px;
+  align-content: space-between;
   padding: 5px;
+}
+body .mainSimulador #articleSimulador #divDatosPrestamo p {
+  margin: 0;
 }
 body .mainSimulador #articleSimulador #divDatosPrestamo #botonSolicitarPrestamo {
   padding: 12px;
@@ -93,11 +98,11 @@ body .mainSimulador #articleSimulador #divDatosPrestamo #botonSolicitarPrestamo 
   border-radius: 15px;
   font-weight: 500;
   width: 120px;
-  margin-left: 60px;
+  margin: 0 0 0 150px;
   background-color: #3EC300;
 }
 body footer {
-  border-top: 1px solid;
+  border-top: 2px solid;
 }
 
 /*# sourceMappingURL=stilos.css.map */
