@@ -63,7 +63,7 @@ function simulador(){
             };
 
             // calculo del prestamo
-            let interesAnual= 0.30
+            let interesAnual= 0.33
             let interesMensual=interesAnual/12;
             let montoTotalConInteres=monto*(1+interesMensual*cuotas);
             let cuotasMensuales=montoTotalConInteres/cuotas
