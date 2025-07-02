@@ -6,7 +6,7 @@ function obtenerApi(){
         .then(respuestaurl=>respuestaurl.json())
         .then(posteo=>{
             lista=posteo;
-            console.log(lista)
+            // console.log(lista)
             publicarDatos()
         })
 }
