@@ -6,6 +6,8 @@ let cuotasDelInput=document.getElementById("cuotas")
 const DateTime= luxon.DateTime;
 let fechaYhora=DateTime.now()
 let datosPersonales=[]
+
+
     class Datos{
         constructor(nombre,apellido,email,monto,cuotas,valorDeCuotas,montoTotalFinal,fechaYhora){
             this.nombre=nombre,
@@ -18,6 +20,7 @@ let datosPersonales=[]
             this.fechaYhora=fechaYhora
     }   
 }
+
 function simulador(){
     document.getElementById("botonSimular").addEventListener("click", ()=>{
         let monto=parseFloat(inputSimulador.value)
@@ -60,7 +63,7 @@ function simulador(){
             };
 
             // calculo del prestamo
-            let interesAnual= 0.75
+            let interesAnual= 0.30
             let interesMensual=interesAnual/12;
             let montoTotalConInteres=monto*(1+interesMensual*cuotas);
             let cuotasMensuales=montoTotalConInteres/cuotas

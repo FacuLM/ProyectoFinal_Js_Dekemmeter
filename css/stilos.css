@@ -47,6 +47,19 @@ body .mainSimulador img {
   grid-area: img;
   margin: 20px 0px 0px 20px;
 }
+body .mainSimulador #tiposDeDolar {
+  margin: 16px;
+}
+body .mainSimulador #tiposDeDolar h3 {
+  margin-top: 6px;
+  text-align: center;
+  color: green;
+  font-weight: 700;
+}
+body .mainSimulador #tiposDeDolar .post {
+  display: grid;
+  grid-template-columns: 0.5fr 0.5fr;
+}
 body .mainSimulador .sectionContactos {
   grid-area: sectionContactos;
 }

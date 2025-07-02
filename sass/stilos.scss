@@ -50,6 +50,19 @@ body{
             grid-area: img ;
             margin: 20px 0px 0px 20px;
         }
+        #tiposDeDolar{
+            margin: 16px;
+            h3{
+                margin-top: 6px;
+                text-align: center;
+                color: green;
+                font-weight: 700;
+            }
+            .post{
+                display: grid;
+                grid-template-columns: 0.5fr 0.5fr;
+            }
+        }
         .sectionContactos{
             grid-area: sectionContactos;
             .divSection{    
